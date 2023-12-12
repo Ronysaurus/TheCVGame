@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="TheCVGame"
+run/main_scene="res://Scenes/Levels/MainLevel.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -18,6 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/scale=6.0
 
 [dotnet]
 
@@ -68,5 +70,6 @@ Interact={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
