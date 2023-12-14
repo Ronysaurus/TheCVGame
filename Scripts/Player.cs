@@ -9,8 +9,6 @@ public partial class Player : CharacterBody2D
 
     [Export] private AnimatedSprite2D _sprite;
 
-
-
     // Get the gravity from the project settings to be synced with RigidBody nodes.
     public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
@@ -37,7 +35,6 @@ public partial class Player : CharacterBody2D
         }
 
         // Get the input direction and handle the movement/deceleration.
-        // As good practice, you should replace UI actions with custom gameplay actions.
         Vector2 direction = Input.GetVector("WalkLeft", "WalkRight", "Up", "Down");
         if (direction != Vector2.Zero)
         {
