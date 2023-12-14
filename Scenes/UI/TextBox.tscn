@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxwr1vxvrxfbo"]
+
+[ext_resource type="Texture2D" uid="uid://haylcqj1y63y" path="res://Art/UI/panel-border-006.png" id="1_lhg7n"]
+
+[node name="TextBox" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 311.0
+offset_bottom = 124.0
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lhg7n")
+region_rect = Rect2(0, 0, 96, 96)
+patch_margin_left = 24
+patch_margin_top = 16
+patch_margin_right = 24
+patch_margin_bottom = 16

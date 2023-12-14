@@ -69,6 +69,7 @@ size = Vector2(12, 11)
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("_sprite")]
 script = ExtResource("1_2t6tv")
 _sprite = NodePath("AnimatedSprite2D")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k66r3")
