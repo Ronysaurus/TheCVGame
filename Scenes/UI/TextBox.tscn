@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxwr1vxvrxfbo"]
+[gd_scene load_steps=4 format=3 uid="uid://dxwr1vxvrxfbo"]
 
+[ext_resource type="Script" path="res://Scripts/Dialogue.cs" id="1_dv1ol"]
 [ext_resource type="Texture2D" uid="uid://haylcqj1y63y" path="res://Art/UI/panel-border-006.png" id="1_lhg7n"]
+[ext_resource type="JSON" path="res://Dialogue/Dialogue.json" id="2_0mcsy"]
 
 [node name="TextBox" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 311.0
 offset_bottom = 124.0
+script = ExtResource("1_dv1ol")
+_json = ExtResource("2_0mcsy")
 metadata/_edit_group_ = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -30,3 +34,15 @@ patch_margin_left = 24
 patch_margin_top = 16
 patch_margin_right = 24
 patch_margin_bottom = 16
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
