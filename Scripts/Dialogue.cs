@@ -1,13 +1,14 @@
 using Godot;
 using LitJson;
 
-public partial class Dialogue : Control
+public partial class Dialogue : Node2D
 {
     [Export] public string Language = "Eng"; 
     [Export] private string name;
     [Export] private Label _label;
     private JsonData _dialogue;
-    private int _index = 0; 
+    private int _index = 0;
+    private bool _interact;
 
     public override void _Ready()
     {
@@ -32,5 +33,21 @@ public partial class Dialogue : Control
         var dialogueFile = FileAccess.Open("res://Dialogue/Dialogue.json", FileAccess.ModeFlags.Read);
         _dialogue = JsonMapper.ToObject(dialogueFile.GetAsText());
         return this;
+    }
+
+    private void OnBodyEntered(Node2D body)
+    {
+        _interact = true;
+    }
+
+    private void OnBodyExit(Node2D body)
+    {
+        _interact = false;
+    }
+
+    private void OnNextPressed()
+    {
+        if (_interact)
+            NextLine().SetLine();
     }
 }

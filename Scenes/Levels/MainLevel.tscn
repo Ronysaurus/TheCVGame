@@ -1377,12 +1377,6 @@ format = 2
 layer_0/name = "Gr"
 layer_0/tile_data = PackedInt32Array(196607, 720896, 5, 262143, 720896, 6, 327679, 720896, 6, 393215, 720896, 6, 458751, 720896, 6, 524287, 1048576, 7, 327680, 720896, 6, 393216, 720896, 6, 458752, 1048576, 7, 327681, 1048576, 5, 393217, 1048576, 6, 458753, 1048576, 7, 327682, 1048576, 5, 393218, 1048576, 6, 458754, 1048576, 7, 327683, 1048576, 5, 393219, 1048576, 6, 458755, 1048576, 7, 327684, 1048576, 5, 393220, 1048576, 6, 458756, 1048576, 7, 327685, 1048576, 5, 393221, 1048576, 6, 458757, 1048576, 7, 327686, 1048576, 5, 393222, 1048576, 6, 458758, 1048576, 7, 327687, 1048576, 5, 393223, 1048576, 6, 458759, 1048576, 7, 327688, 1048576, 5, 393224, 1048576, 6, 458760, 1048576, 7, 327689, 1048576, 5, 393225, 1048576, 6, 458761, 1048576, 7, 327690, 1048576, 5, 393226, 1048576, 6, 458762, 1048576, 7, 327691, 1048576, 5, 393227, 1048576, 6, 458763, 1048576, 7, 131072, 786432, 5, 196608, 786432, 6, 262144, 786432, 6, 327692, 1114112, 5, 393228, 1114112, 6, 458764, 1114112, 7)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_lh04l")]
-position = Vector2(31, 64)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
-remote_path = NodePath("../../Camera2D")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(31, 64)
 process_callback = 0
@@ -1392,8 +1386,14 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="TextBox" parent="." instance=ExtResource("3_tu65b")]
-offset_left = 21.0
-offset_top = 10.0
-offset_right = 135.0
-offset_bottom = 69.0
+position = Vector2(136, 32)
+scale = Vector2(0.929688, 0.4375)
 name = "AboutMe"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_lh04l")]
+position = Vector2(31, 64)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../../Camera2D")
+
+[connection signal="Next" from="CharacterBody2D" to="TextBox" method="OnNextPressed"]

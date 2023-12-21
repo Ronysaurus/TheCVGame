@@ -4,6 +4,8 @@ using System.Reflection.Metadata;
 
 public partial class Player : CharacterBody2D
 {
+    [Signal] public delegate void NextEventHandler();
+
     [Export] public float Speed = 100.0f;
     [Export] public float JumpVelocity = -150.0f;
 
@@ -26,6 +28,11 @@ public partial class Player : CharacterBody2D
         {
             velocity.Y += gravity * (float)delta;
             _sprite.Play("Jump");
+        }
+
+        if(Input.IsActionJustPressed("Interact"))
+        {
+            EmitSignal(SignalName.Next);
         }
 
         // Handle Jump.
