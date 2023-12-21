@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d10l2s2ddt5ba"]
+[gd_scene load_steps=6 format=3 uid="uid://d10l2s2ddt5ba"]
 
 [ext_resource type="Texture2D" uid="uid://c2vg2vcufdb18" path="res://Art/Tilemaps/monochrome_tilemap.png" id="1_5w4v7"]
 [ext_resource type="PackedScene" uid="uid://c5pa3ld8uy7xo" path="res://Scenes/Characters/Player.tscn" id="2_lh04l"]
+[ext_resource type="PackedScene" uid="uid://dxwr1vxvrxfbo" path="res://Scenes/UI/TextBox.tscn" id="3_tu65b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sdcer"]
 texture = ExtResource("1_5w4v7")
@@ -1389,3 +1390,10 @@ limit_left = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="TextBox" parent="." instance=ExtResource("3_tu65b")]
+offset_left = 21.0
+offset_top = 10.0
+offset_right = 135.0
+offset_bottom = 69.0
+name = "AboutMe"
