@@ -4,8 +4,34 @@
         "AboutMe":
         {
             "0":"Hello there!",
-            "1":"My name is Alain, I'm a software developer"
+            "1":"My name is Alain, I'm a software developer",
+            "2":"I have experience working as a developer in multiple lenguages and systems"
+        },
+        "Education":
+        {
+            "0":"My education",
+            "1":"Bachelor Degree in Video Games Programming",
+            "2":"Graduated in 2018 at University of Advanced Technologies"
+        },
+        "Experience":
+        {
+            "0":"My experience"
+        },
+        "Programming":
+        {
+            "0": "Programing Skills"
+        },
+        "Skills":
+        {
+            "0": "Soft Skills"
+        },
+        "Languages":
+        {
+            "0": "Spanish: native \nEnglish: Advanced \nGerman: Basic"
         }
-
+    },
+    "Esp":
+    {
+        
     }
 }
