@@ -1,17 +1,22 @@
+using System.Reflection;
 using Godot;
 using LitJson;
 
 public partial class Dialogue : Node2D
 {
-    [Export] public string Language = "Eng"; 
+    [Export] public string Language = "Eng";
     [Export] private string name;
     [Export] private Label _label;
     private JsonData _dialogue;
     private int _index = 0;
-    private bool _interact;
+    private bool _interact = false;
+    private Player _player = default;
 
     public override void _Ready()
     {
+        _player = GetNodeOrNull<Player>("/root/MainLevel/Player");
+        if (_player != null)
+            _player.Next += () => OnNextPressed();
         LoadDialogue().SetLine();
     }
 
@@ -23,7 +28,8 @@ public partial class Dialogue : Node2D
 
     private Dialogue SetLine()
     {
-        _label.Text = _dialogue[Language][name][_index.ToString()].ToString();
+        if (_dialogue[Language][name].ContainsKey(_index.ToString()))
+            _label.Text = _dialogue[Language][name][_index.ToString()].ToString();
         return this;
     }
 
